@@ -8,8 +8,26 @@
     <body>
         <h3>Say "Hello" to: </h3>
         <s:form action="HelloWorld">
-            Name: <s:textfield name="name" />
+            1  Name: <s:textfield name="name" />
             <s:submit />
         </s:form>
+        
+        
+        <s:form action="AliasHelloWorld">
+            2  Name: <s:textfield name="name" />
+            <s:submit />
+        </s:form>
+        
+        <s:form action="HelloWorld!aliasAction">
+            3  Name: <s:textfield name="name" />
+            <s:submit />
+        </s:form>
+        
+        
+		<s:form action="VMHelloWorld">
+            4  velocity: <s:textfield name="name" />
+            <s:submit />
+        </s:form>
+        
     </body>
 </html>
