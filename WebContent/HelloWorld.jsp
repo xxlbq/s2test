@@ -7,5 +7,6 @@
     </head>
     <body>
         <h3><s:property value="name" /></h3>
+        <h3><s:property value="message" /></h3>
     </body>
 </html>
