@@ -21,6 +21,14 @@
     <s:submit value="Submit"/>
 </s:form>
 
+<br/>
+   Please select a role below:
+    <s:bean id ="roles" name ="tutorial.Roles" /> 
+    <s:form action ="InterceptorLogin" > 
+        <s:radio list ="#roles.roles" value ="'EMPLOYEE'" name ="role" label ="Role" /> 
+        <s:submit /> 
+    </s:form > 
+
 
 </body>
 </html>
