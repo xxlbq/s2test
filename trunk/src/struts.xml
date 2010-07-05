@@ -25,8 +25,46 @@
 
 
 		<action name="LoginX" class="tutorial.LoginX">
-		    <result>/HelloWorld.jsp</result>
+			<result>/HelloWorld.jsp</result>
 		</action>
 
+
+
+		<action name="ProductConfirm" class="tutorial.ProductConfirm">
+			<result>/ShowProducts.jsp</result>
+			<result name="input">/AddProducts.jsp</result>
+		</action>
 	</package>
+
+
+
+
+	<include file="struts-default.xml" />
+	<package name="InterceptorDemo" extends="struts-default">
+
+		<interceptors>
+			<interceptor name="auth" class="tutorial.AuthorizationInterceptor" />
+		</interceptors>
+		
+		<action name="Timer" class="tutorial.TimerInterceptorAction">
+			<interceptor-ref name="timer" />
+			<result>/Timer.jsp </result>
+		</action>
+		<action name="InterceptorLogin" class="tutorial.InterceptorLogin">
+			<result type="chain">AuthorizatedAccess </result>
+		</action>
+		<action name="AuthorizatedAccess" class="tutorial.AuthorizatedAccess">
+			<interceptor-ref name="auth" />
+			<result name="login">/Login.jsp </result>
+			<result name="success">/ShowRole.jsp </result>
+		</action>
+		<action name="clearRole" class="tutorial.ClearRole">
+			<interceptor-ref name="auth" />
+			<result name="login">/Login.jsp </result>
+			<result name="success" type="chain">AuthorizatedAccess
+			</result>
+		</action>
+	</package>
+
+
 </struts>
