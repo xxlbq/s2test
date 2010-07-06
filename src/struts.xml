@@ -39,7 +39,7 @@
 
 
 
-	<include file="struts-default.xml" />
+
 	<package name="InterceptorDemo" extends="struts-default">
 
 		<interceptors>
@@ -61,8 +61,7 @@
 		<action name="clearRole" class="tutorial.ClearRole">
 			<interceptor-ref name="auth" />
 			<result name="login">/Login.jsp </result>
-			<result name="success" type="chain">AuthorizatedAccess
-			</result>
+			<result name="success" type="chain">AuthorizatedAccess</result>
 		</action>
 	</package>
 
